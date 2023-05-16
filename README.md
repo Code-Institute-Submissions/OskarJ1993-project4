@@ -180,6 +180,48 @@ Here is where you as an admin can create user and create products. Products can 
 ![Index-image-two](readme-images/admin-page.png)
 
 
+## Design
+
+### Wireframe
+
+
+
+### Colours
+
+Color theme is influenced by tires. Black, white and grey is the theme of this project.
+
+
+### Typography
+
+To make it stand out i used Roboto as a font all throw the project with a backup with Sans-sarif.
+
+
+## Testing
+
+### Browser Testing
+
+I have tested that this application works using Windows and MacOs. I Used the following browsers for testing:
+
+  - Safari
+  - Google Chrome
+ 
+
+I have tested this application works on the following iOS devices using Safari Version 15.6 browser:
+
+  - iPhone Xs max
+  - Poco Phone
+
+### Responsiveness
+
+Chrome developer tool have been used to check the responsiveness.
+
+  - I have tested that this application works on different screen sizes from iPhone 5 (320px wide) and very large screens.
+
+### Validator Testing
+
+
+
+
 
 
 
