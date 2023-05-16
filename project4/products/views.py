@@ -33,26 +33,26 @@ def search(request):
     context = {'products': products}
     return render(request, 'search.html', context)
 
-
-
-
 def add_to_cart(request):
     if request.method == 'POST':
         product_id = request.POST.get('product_id')
-        quantity = request.POST.get('quantity')
         product = get_object_or_404(Product, id=product_id)
-        cart = Cart.add_to_cart(request.user, product, quantity)
-        return JsonResponse({'status': 'success'})
+        cart = Cart.add_to_cart(request.user, product)
+        
+        if cart:
+            return JsonResponse({'status': 'success', 'cart_id': cart.id})
+        else:
+            return JsonResponse({'status': 'error', 'message': 'Failed to add to cart.'})
     else:
-        return JsonResponse({'status': 'error'})
+        return JsonResponse({'status': 'error', 'message': 'Invalid request method.'})
+
 
 def show_cart(request):
     cart_items = Cart.objects.filter(user=request.user)
-    total_price = sum([item.quantity * item.product.price for item in cart_items])
+    total_price = sum([item.product.price for item in cart_items])
     return render(request, 'cart.html', {'cart_items': cart_items, 'total_price': total_price})
 
 
 def clear_cart(request):
     Cart.objects.filter(user=request.user).delete()
     return redirect(show_cart)
-
