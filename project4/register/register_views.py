@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login
 from .forms import *
 from .models import *
 
+
 def register_view(request):
     if request.method == 'POST':
         form = UserCreateForm(request.POST)
@@ -15,6 +16,7 @@ def register_view(request):
     else:
         form = UserCreateForm()
     return render(request, 'register.html', {'form': form})
+
 
 def login_view(request):
     if request.method == 'POST':

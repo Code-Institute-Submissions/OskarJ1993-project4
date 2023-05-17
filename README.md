@@ -136,7 +136,7 @@ Footer section contains Register, log in / log out. Depending if you are logged 
 
 It also shows contact us and location (this is not yet working).
 
-![Index-image-two](readme-images/footer.png)
+![Footer page](readme-images/footer.png)
 
 
 #### Register Page
@@ -149,35 +149,35 @@ Register page is where you register as an user. You have to provide:
 - Zip code
 - Password
 
-![Index-image-two](readme-images/register-page.png)
+![Register page](readme-images/register-page.png)
 
 
 #### log In Page
 
 You have to log in to buy on the page. Log in contains Username field(email) and password field.
 
-![Index-image-two](readme-images/login-page.png)
+![Log in page](readme-images/login-page.png)
 
 
 #### Tire page
 
 Here is where you can find the tires. Implemenation is yet to be updated due to size of the tires the coustomor wants. Here is is filtered to only show tires.
 
-![Index-image-two](readme-images/tire-page.png)
+![Tire page](readme-images/tire-page.png)
 
 
 #### Rims page
 
 Here is where rims are shows in different models.
 
-![Index-image-two](readme-images/rims-page.png)
+![Rims page](readme-images/rims-page.png)
 
 
 #### Admin page
 
 Here is where you as an admin can create user and create products. Products can be filtered by using category "Tires" and "Rims".
 
-![Index-image-two](readme-images/admin-page.png)
+![Admin page](readme-images/admin-page.png)
 
 
 ## Design
@@ -218,6 +218,103 @@ Chrome developer tool have been used to check the responsiveness.
   - I have tested that this application works on different screen sizes from iPhone 5 (320px wide) and very large screens.
 
 ### Validator Testing
+
+#### W3C Markup Validator:
+
+I used W3C HTML validator to validate my html pages, all errors it gives is related to django syntax. Here is the results:
+
+- Base.html
+
+![base page validator](readme-images/base-html-validator.png)
+
+- Index.html
+
+![Index page validator](readme-images/index-html-validator.png)
+
+- login.html
+
+![login page validator](readme-images/login-html-validator.png)
+
+- register.html
+
+![register page validator](readme-images/register-html-validator.png)
+
+- rims.html
+
+![rims page validator](readme-images/rims-html-validator.png)
+
+- tires.html
+
+![Tires page validator](readme-images/tires-html-validator.png)
+
+
+#### W3C CSS Validator:
+
+The CSS jigsaw validator showed no errors, here is the result:
+
+![CSS Validator](readme-images/css-validator.png)
+
+
+#### JSHint:
+
+The JSHINT validator gives some ES6 warnings for using let, no problems with code. Here is results:
+
+![JS Hint](readme-images/js-hint-validator.png)
+
+
+#### PEP8 Online:
+
+The python files was tested in PEP8 validator, here is results from products folder:
+
+- admin.py
+
+![Admin.py](readme-images/products-admin-validator.png)
+
+- models.py
+
+![Models.py](readme-images/products-models-validator.png)
+
+- views.py
+
+![Views.py](readme-images/products-views-validator.png)
+
+From Register/Login:
+
+- forms.py
+
+![Forms.py](readme-images/register-forms-validator.png)
+
+- models.py
+
+![Models.py](readme-images/register-models-validator.png)
+
+- register_views.py
+
+![Register_views.py](readme-images/register-views-validator.png)
+
+
+
+#### Lighthouse:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

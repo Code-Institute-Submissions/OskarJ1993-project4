@@ -1,111 +1,98 @@
-{% load static %}
-
 <!DOCTYPE html>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Tire Shop</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script defer src="https://friconix.com/cdn/friconix.js"> </script>
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    </head>
-    <body>
+{% load static %}
 
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Tire Shop</title>
+    <meta name="description" content="Tire-shop" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <ul class="upper-list">
+          {% if user.is_authenticated %}
+          <li><p class="welcome-text">Welcome, {{ user.username }}</p></li>
+          <li>
+            <a href="{% url 'logout' %}" class="logout-link"
+              ><i class="fi-xnluxl-user"></i><br
+            /></a>
+          </li>
+          {% else %}
+          <li><p class="welcome-text">Welcome, Guest</p></li>
+          <li>
+            <a href="{% url 'login' %}"><i class="fi-xnluxl-user"></i><br /></a>
+          </li>
+          {% endif %} {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'cart' %}">
+              <i class="fi-xnluhl-shopping-cart"></i>
+            </a>
+          </li>
+          {% else %}
+          <li>
+            <a href="{% url 'login' %}">
+              <i class="fi-xnluhl-shopping-cart"></i>
+            </a>
+          </li>
 
-        <header>
-            <div class="navbar">
-              <ul class="upper-list">
-                {% if user.is_authenticated %}
-                <li><p class="welcome-text">Welcome, {{ user.username }}</p></li>
-                <li>
-                    <a href="{% url 'logout' %}" class="logout-link"><i class="fi-xnluxl-user"></i><br></a>
-                </li>
-            {% else %}
-                <li><p class="welcome-text">Welcome, Guest</p></li>
-                <li>
-                    <a href="{% url 'login' %}"><i class="fi-xnluxl-user"></i><br></a>
-                </li>
-            {% endif %}
+          {% endif %}
+
+          <li id="Logo-upper">
+            <h3><a href="{% url 'index' %}">Tire LOGO</a></h3>
+          </li>
+          <li id="leftnaved">
+            <h3><i class="fi-xtlrxl-phone-thin"></i> Call us today!</h3>
+          </li>
+        </ul>
+      </div>
+
+      <div class="under-nav">
+        <form method="get" action="{% url 'search' %}">
+          <input type="text" name="query" placeholder="Search..." />
+          <button type="submit">Search</button>
+        </form>
+        <nav>
+          <ul class="undernav">
+            <li><a href="{% url 'phones' %}">TIRES</a></li>
+            <li><a href="{% url 'accessories' %}">RIMS</a></li>
+            <li><a href="">TPMS</a></li>
+            <li><a href="">COMPLETE WHEELS</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>{% block content %} {% endblock %}</main>
+    <footer>
+      <div class="footer-top">
+        <div class="footer-nav">
+          <ul>
             {% if user.is_authenticated %}
-                <li>
-                  <a href="{% url 'cart' %}">
-                    <i class="fi-xnluhl-shopping-cart"></i>
-                  </a>
-                </li>
-                {% else %}
-                <li>
-                  <a href="{% url 'login' %}">
-                    <i class="fi-xnluhl-shopping-cart"></i>
-                  </a>
-                </li>
+            <li><a href="{% url 'logout' %}">Log out</a></li>
+            {% else %}
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">Log in</a></li>
+            {% endif %}
+            <li><a href="">Contact us</a></li>
+            <li><a href="">Location</a></li>
+          </ul>
+        </div>
+        <div class="footer-logo">
+          <h3><a href="{% url 'index' %}">Tire LOGO</a></h3>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; Tire Logo <span id="currentYear"></span></p>
+      </div>
+    </footer>
 
-                {% endif %}
-
-
-                <li id="Logo-upper">
-            
-                  <h3><a href="{% url 'index' %}">Tire LOGO</a></h3>
-                </li>
-                <li id="leftnaved">
-                  <h3><i class="fi-xtlrxl-phone-thin"></i> Call us today!</h3>
-                </li>
-              </ul>
-            </div>
-          
-            <div class="under-nav">
-              <form method="get" action="{% url 'search' %}">
-                <input type="text" name="query" placeholder="Search...">
-                <button type="submit">Search</button>
-              </form>
-              <nav>
-                <ul class="undernav">
-                  <li><a href="{% url 'phones' %}">TIRES</a></li>
-                  <li><a href="{% url 'accessories' %}">RIMS</a></li>
-                  <li><a href="">TPMS</a></li>
-                  <li><a href="">COMPLETE WHEELS</a></li>
-                </ul>
-              </nav>
-            </div>
-          </header>
-
-        <main>
-
-
-
-            {% block content %}
-
-            {% endblock %}
-    
-            
-
-        </main>
-        <footer>
-          <div class="footer-top">
-              <div class="footer-nav">
-                  <ul>
-                      {% if user.is_authenticated %}
-                          <li><a href="{% url 'logout' %}">Log out</a></li>
-                      {% else %}
-                          <li><a href="{% url 'register' %}">Register</a></li>
-                          <li><a href="{% url 'login' %}">Log in</a></li>
-                      {% endif %}
-                      <li><a href="">Contact us</a></li>
-                      <li><a href="">Location</a></li>
-                  </ul>
-              </div>
-              <div class="footer-logo">
-                  <h3><a href="{% url 'index' %}">Tire LOGO</a></h3>
-              </div>
-          </div>
-          <div class="footer-bottom">
-              <p>&copy; Tire Logo <span id="currentYear"></span></p>
-          </div>
-      </footer>
-       
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="{% static 'scripts/script.js' %}"></script>
-    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'scripts/script.js' %}"></script>
+  </body>
 </html>
