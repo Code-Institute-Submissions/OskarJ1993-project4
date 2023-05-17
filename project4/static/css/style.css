@@ -36,7 +36,6 @@ body {
   margin-right: 10px;
 }
 
-
 .upper-list li {
   margin-right: 20px;
 }
@@ -83,9 +82,6 @@ body {
 #leftnaved i {
   margin-right: 5px;
 }
-
-
-
 
 .under-nav {
   display: flex;
@@ -471,8 +467,9 @@ body {
 
 /* for small screens */ 
 
+/* for small screens */
 @media (max-width: 768px) {
-  /* Adjustments for smaller devices */
+
 
   .navbar {
     flex-direction: column;
@@ -492,6 +489,11 @@ body {
     margin-left: 0;
   }
 
+  .under-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .undernav {
     flex-wrap: wrap;
     justify-content: center;
@@ -507,11 +509,23 @@ body {
   }
 
   .image-upper {
-    height: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
-  .card {
-    margin-left: 0;
+  .image-upper img {
+    max-width: 100%;
+  }
+
+  .searchbar {
     margin-bottom: 20px;
+  }
+
+  .searchbar input[type="text"] {
+    width: 70%;
+  }
+
+  .searchbar button {
+    width: 30%;
   }
 }
