@@ -1,4 +1,4 @@
-# Tire Webshop
+# Tire Web Shop
 
 [View the live project here.](https://project4web.onrender.com/)
 
