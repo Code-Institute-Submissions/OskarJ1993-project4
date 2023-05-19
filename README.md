@@ -1,5 +1,8 @@
 # Tire Webshop
 
+[View the live project here.](https://project4web.onrender.com/)
+
+
 Tire Webshop is a web application built with Django, allowing users to browse, search, and purchase tires and rims online. It provides a user-friendly interface for customers to explore various tire options, view detailed product information, and add items to their shopping cart.
 
 This is an ongoing project and not a finished result. Future updates will come.
@@ -16,61 +19,6 @@ This is an ongoing project and not a finished result. Future updates will come.
 
 - Responsive Design: Ensure the webshop is accessible and optimized for various devices, including desktops, tablets, and mobile phones.
 
-## Index – Table of Contents
-* [User Experience (UX)](#user-experience-ux)
-  * [Project Goals:](#project-goals)
-  * [Strategy:](#strategy)
-  * [User stories:](#user-stories)
-* [Features](#features)
-  * [Existing Features](#existing-features)
-    * [Navigation bar:](#navigation-bar)
-    * [Home page:](#home-page)
-    * [Blog page:](#blog-page)
-    * [Add post page:](#add-post-page)
-    * [Post detail page:](#post-detail-page)
-    * [Post update page:](#post-update-page)
-    * [Comment update page:](#comment-update-page)
-    * [Register page:](#register-page)
-    * [Login page:](#login-page)
-    * [Logout page:](#logout-page)
-    * [Django Admin page:](#django-admin-page)
-    * [System messages:](#system-messages)
-    * [Footer:](#footer)
-    * [Additional features:](#additional-features)
-    * [Meta Data:](#meta-data)
-  * [Features to Implement in the future](#features-to-implement-in-the-future)
-* [Design](#design)
-  * [Wireframes](#wireframes)
-  * [Data Model](#data-model)
-  * [Site map](#site-map)
-  * [Colours](#colours)
-  * [Typography](#typography)
-  * [Imagery](#imagery)
-* [Technologies Used](#technologies-used)
-  * [Languages Used:](#languages-used)
-  * [Frameworks and Libraries Used:](#frameworks-and-libraries-used)
-  * [Software and Web Applications Used:](#software-and-web-applications-used)
-* [Testing](#testing)
-  * [Browser Testing](#browser-testing)
-  * [Responsiveness](#responsiveness)
-  * [Validator Testing](#validator-testing)
-    * [W3C Markup Validator:](#w3c-markup-validator)
-    * [W3C CSS Validator:](#w3c-css-validator)
-    * [JSHint:](#jshint)
-    * [PEP8 Online:](#pep8-online)
-    * [Lighthouse:](#lighthouse)
-  * [Automated Testing](#automated-testing)
-    * [Jest:](#jest)
-    * [Django testing tools:](#django-testing-tools)
-  * [User Stories testing](#user-stories-testing)
-    * [Testing which features support which stories](#testing-which-features-support-which-stories)
-  * [Further Testing](#further-testing)
-  * [Solved bugs](#solved-bugs)
-  * [Known bugs](#known-bugs)
-* [Deployment](#deployment)
-* [Credits](#credits)
-  * [Code](#code)
-  * [Acknowledgements](#acknowledgements)
 
 
 ## User Experience (UX)
@@ -295,6 +243,55 @@ From Register/Login:
 
 
 #### Lighthouse:
+
+Here is the results from lighthouse:
+
+![Register_views.py](readme-images/lighthouse-testing.png)
+
+
+
+
+#### Manuel testing:
+
+| ID | Test Label | Test Action | Expected Outcome | Test Outcome |
+|----|------------|--------------------------------|--------------|------------------
+| 1 | Landing page / Welcome page | User enters site | Images, text, links work | PASS |
+| 2 | Menu page | Navigate on menu page | Images, texts, links, icons work | PASS |
+| 3 | Register page | User can register  | Works like it should | PASS |
+| 4 | Login page | User can register and will be redirected | Works as expected | PASS |
+| 5 | Responsiveness | Tested on diffrent device sizes | does not work on small screens as expected due to time | FAIL |
+| 6 | Add to cart | User can add to cart when logged in | User can add to cart when user loggs in | PASS |
+| 7 | See cart | User can see cart | User can see cart when user is logged in | PASS |
+| 8 | Modify cart quantity | User can clear cart but not modify quantity | Ongoing to fix this issue next, not working as expected | FAIL |
+
+
+
+## Deployment
+The website will be deployed using the following methods:
+
+### Via Render:
+
+The project is deployed using render.
+
+To Deploy to render you need to:
+
+- Create an account
+
+- Create a server(I use postgres)
+
+- Create a webservice
+
+- Connect it to github and start build
+
+- Remeber to have whitenoise installed for static files
+
+
+
+- [LINK TO GITHUB PAGE.](https://oskarj1993.github.io/Project4/)
+ 
+
+
+
 
 
 
